@@ -1,0 +1,32 @@
+# Build output. Every binary pattern is anchored to the repository root
+# with a leading slash, so that source directories such as cmd/keelsql are
+# never swallowed by a bare `keelsql` rule.
+/bin/
+/dist/
+/keelsql
+/keelsql.exe
+
+# Test binaries and coverage.
+/*.test
+/*.test.exe
+/*.exe
+/*.out
+/coverage.out
+/coverage.html
+
+# Databases created by the REPL or by hand while poking around. keelsql
+# stores everything inside a keelstore directory, so the whole directory is
+# ignored rather than the individual files.
+/keeldata/
+/*.db/
+/*.sst
+/*.wal
+/MANIFEST
+/MANIFEST.tmp
+
+# Editors and operating systems.
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
